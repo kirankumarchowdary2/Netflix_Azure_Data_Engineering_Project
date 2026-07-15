@@ -77,6 +77,8 @@ This project implements a robust batch processing pipeline designed to handle Ne
 - **Azure Autoloader**: Automatically detects and processes new files in ADLS
 - **Directory Listing**: Monitors ADLS containers for incremental file changes
 - **Incremental Loading**: Only new/modified data is processed, minimizing costs
+<img width="1609" height="634" alt="image" src="https://github.com/user-attachments/assets/0f97bf65-e836-40b7-ade7-684aada6dd7d" />
+
 
 ### 🔀 **Data Transformation**
 - **PySpark-based ETL**: Distributed processing for large datasets
@@ -117,49 +119,6 @@ This project implements a robust batch processing pipeline designed to handle Ne
 
 ---
 
-## Project Structure
-
-```
-netflix-batch-processing/
-├── README.md                          # Project documentation
-├── LICENSE                            # License information
-├── .gitignore                         # Git ignore rules
-│
-├── notebooks/
-│   ├── 01_data_ingestion.py          # Autoloader setup & incremental loading
-│   ├── 02_data_transformation.py     # PySpark transformation logic
-│   ├── 03_dlt_pipeline.py            # Delta Live Tables definitions
-│   └── 04_validation_activity.py     # Data quality checks
-│
-├── scripts/
-│   ├── setup_infrastructure.py       # Azure resource provisioning
-│   ├── configure_adls.py             # ADLS container and access setup
-│   └── deploy_pipelines.py           # ADF pipeline deployment
-│
-├── pipelines/
-│   ├── main_pipeline.json            # Primary orchestration pipeline
-│   ├── activities/
-│   │   ├── copy_data_activity.json   # Data copy definitions
-│   │   ├── web_activity.json         # API integrations
-│   │   └── validation_activity.json  # Quality validation
-│   └── linked_services/
-│       ├── adls_connection.json      # Data Lake connection
-│       ├── github_service.json       # GitHub integration
-│       └── databricks_service.json   # Databricks workspace
-│
-├── config/
-│   ├── environment.yml               # Environment configuration
-│   ├── parameters.json               # Pipeline parameters
-│   └── data_expectations.yaml        # DLT quality rules
-│
-└── docs/
-    ├── ARCHITECTURE.md               # Detailed architecture guide
-    ├── SETUP_GUIDE.md                # Step-by-step setup instructions
-    ├── TROUBLESHOOTING.md            # Common issues and solutions
-    └── API_REFERENCE.md              # Function and activity documentation
-```
-
----
 
 ## Prerequisites
 
@@ -431,41 +390,6 @@ az storage blob list --container-name bronze --account-name netflixdatalake
 - **Enable Z-ordering**: Organize data for faster queries
 - **Monitor Costs**: Track resource utilization and optimize accordingly
 
-### Recommended Cluster Configuration
-```json
-{
-  "spark_version": "11.3.x-scala2.12",
-  "node_type_id": "i3.xlarge",
-  "num_workers": 4,
-  "autoscale": {
-    "min_workers": 2,
-    "max_workers": 8
-  },
-  "aws_attributes": {
-    "availability": "SPOT_WITH_FALLBACK"
-  }
-}
-```
-
----
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### Code Standards
-- Use Python PEP 8 for code formatting
-- Add docstrings to all functions
-- Include unit tests for new features
-- Update documentation as needed
-
----
 
 ## License
 
@@ -486,35 +410,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Databricks CLI Reference](https://docs.databricks.com/dev-tools/cli/)
 
 ### Getting Help
-- 📧 Email: support@example.com
-- 💬 GitHub Issues: [Create an issue](https://github.com/yourusername/netflix-batch-processing/issues)
-- 📚 Wiki: [Project Wiki](https://github.com/yourusername/netflix-batch-processing/wiki)
+- 📧 Email: avulapatikirankumar39@gmail.com
+- 💬 GitHub Issues: [Create an issue](https://github.com/kirankumarchowdary2/netflix-batch-processing/issues)
 
 ---
 
-## Roadmap
-
-- [ ] Add real-time streaming support via Apache Kafka
-- [ ] Implement advanced ML model integration
-- [ ] Create interactive dashboards with Power BI
-- [ ] Add cost optimization recommendations
-- [ ] Support for multi-cloud deployment
-- [ ] Enhanced data lineage and impact analysis
-- [ ] Advanced anomaly detection capabilities
-
----
 
 ## Acknowledgments
 
 - Netflix for the inspiration
 - Azure Databricks team for excellent documentation
-- Community contributors and supporters
-
 ---
 
 <div align="center">
 
-**Made with ❤️ by [Your Name/Team]**
+**Made with ❤️ by Kiran Kumar Avulapati**
 
 ⭐ If this project helped you, please consider giving it a star! ⭐
 
